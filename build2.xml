@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project default="create_run_jar" name="Create Runnable Jar for Project swing import with libraries in sub-folder">
+    <!--this file was created by Eclipse Runnable JAR Export Wizard-->
+    <!--ANT 1.7 is required                                        -->
+    <target name="create_run_jar">
+        <jar destfile="E:/workspace/swing import/target/app.jar">
+            <manifest>
+                <attribute name="Main-Class" value="com.app.main.Startup"/>
+                <attribute name="Class-Path" value=". app_lib/hibernate-annotations.jar app_lib/hibernate-commons-annotations.jar app_lib/hibernate-entitymanager.jar app_lib/hibernate-validator.jar app_lib/ejb3-persistence.jar app_lib/cglib-2.2.jar app_lib/javassist-3.9.0.GA.jar app_lib/antlr-2.7.6.jar app_lib/commons-collections-3.1.jar app_lib/hibernate3.jar app_lib/jta-1.1.jar app_lib/ehcache-1.2.3.jar app_lib/slf4j-api-1.5.8.jar app_lib/slf4j-log4j12-1.5.8.jar app_lib/log4j-1.2.14.jar app_lib/dom4j-1.6.1.jar app_lib/mysqldriver.jar app_lib/jxl.jar app_lib/jaxen-1.1.1.jar app_lib/SwingC.jar"/>
+            </manifest>
+            <fileset dir="E:/workspace/swing import/bin"/>
+        </jar>
+        <delete dir="E:/workspace/swing import/target/app_lib"/>
+        <mkdir dir="E:/workspace/swing import/target/app_lib"/>
+        <copy file="D:/Program Files/Genuitec/MyEclipse-8.6/configuration/org.eclipse.osgi/bundles/89/1/.cp/myeclipse-data/3.3/lib/entitymanager/hibernate-annotations.jar" todir="E:/workspace/swing import/target/app_lib"/>
+        <copy file="D:/Program Files/Genuitec/MyEclipse-8.6/configuration/org.eclipse.osgi/bundles/89/1/.cp/myeclipse-data/3.3/lib/entitymanager/hibernate-commons-annotations.jar" todir="E:/workspace/swing import/target/app_lib"/>
+        <copy file="D:/Program Files/Genuitec/MyEclipse-8.6/configuration/org.eclipse.osgi/bundles/89/1/.cp/myeclipse-data/3.3/lib/entitymanager/hibernate-entitymanager.jar" todir="E:/workspace/swing import/target/app_lib"/>
+        <copy file="D:/Program Files/Genuitec/MyEclipse-8.6/configuration/org.eclipse.osgi/bundles/89/1/.cp/myeclipse-data/3.3/lib/hibernate-validator.jar" todir="E:/workspace/swing import/target/app_lib"/>
+        <copy file="D:/Program Files/Genuitec/MyEclipse-8.6/configuration/org.eclipse.osgi/bundles/89/1/.cp/myeclipse-data/3.3/lib/entitymanager/ejb3-persistence.jar" todir="E:/workspace/swing import/target/app_lib"/>
+        <copy file="D:/Program Files/Genuitec/MyEclipse-8.6/configuration/org.eclipse.osgi/bundles/89/1/.cp/myeclipse-data/3.3/lib/bytecode/cglib/cglib-2.2.jar" todir="E:/workspace/swing import/target/app_lib"/>
+        <copy file="D:/Program Files/Genuitec/MyEclipse-8.6/configuration/org.eclipse.osgi/bundles/89/1/.cp/myeclipse-data/3.3/lib/bytecode/javassist/javassist-3.9.0.GA.jar" todir="E:/workspace/swing import/target/app_lib"/>
+        <copy file="D:/Program Files/Genuitec/MyEclipse-8.6/configuration/org.eclipse.osgi/bundles/89/1/.cp/myeclipse-data/3.2/lib/antlr-2.7.6.jar" todir="E:/workspace/swing import/target/app_lib"/>
+        <copy file="D:/Program Files/Genuitec/MyEclipse-8.6/configuration/org.eclipse.osgi/bundles/89/1/.cp/myeclipse-data/3.3/lib/required/commons-collections-3.1.jar" todir="E:/workspace/swing import/target/app_lib"/>
+        <copy file="D:/Program Files/Genuitec/MyEclipse-8.6/configuration/org.eclipse.osgi/bundles/89/1/.cp/myeclipse-data/3.3/lib/hibernate3.jar" todir="E:/workspace/swing import/target/app_lib"/>
+        <copy file="D:/Program Files/Genuitec/MyEclipse-8.6/configuration/org.eclipse.osgi/bundles/89/1/.cp/myeclipse-data/3.3/lib/required/jta-1.1.jar" todir="E:/workspace/swing import/target/app_lib"/>
+        <copy file="D:/Program Files/Genuitec/MyEclipse-8.6/configuration/org.eclipse.osgi/bundles/89/1/.cp/myeclipse-data/3.2/lib/ehcache-1.2.3.jar" todir="E:/workspace/swing import/target/app_lib"/>
+        <copy file="D:/Program Files/Genuitec/MyEclipse-8.6/configuration/org.eclipse.osgi/bundles/89/1/.cp/myeclipse-data/3.3/lib/required/slf4j-api-1.5.8.jar" todir="E:/workspace/swing import/target/app_lib"/>
+        <copy file="D:/Program Files/Genuitec/MyEclipse-8.6/configuration/org.eclipse.osgi/bundles/89/1/.cp/myeclipse-data/3.3/lib/required/slf4j-log4j12-1.5.8.jar" todir="E:/workspace/swing import/target/app_lib"/>
+        <copy file="D:/Program Files/Genuitec/MyEclipse-8.6/configuration/org.eclipse.osgi/bundles/89/1/.cp/myeclipse-data/3.3/lib/required/log4j-1.2.14.jar" todir="E:/workspace/swing import/target/app_lib"/>
+        <copy file="D:/Program Files/Genuitec/MyEclipse-8.6/configuration/org.eclipse.osgi/bundles/89/1/.cp/myeclipse-data/3.1/lib/dom4j-1.6.1.jar" todir="E:/workspace/swing import/target/app_lib"/>
+        <copy file="E:/workspace/swing import/lib/mysqldriver.jar" todir="E:/workspace/swing import/target/app_lib"/>
+        <copy file="E:/workspace/swing import/lib/jxl.jar" todir="E:/workspace/swing import/target/app_lib"/>
+        <copy file="E:/workspace/swing import/lib/jaxen-1.1.1.jar" todir="E:/workspace/swing import/target/app_lib"/>
+        <copy file="E:/workspace/swing import/lib/SwingC.jar" todir="E:/workspace/swing import/target/app_lib"/>
+    </target>
+</project>

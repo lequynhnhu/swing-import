@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--配置文件，文件目录，以及导入日期  --><app>
+    <!--运行的类型为    自动/手动-->
+    <runtype>手动</runtype>
+    <!-- 自动扫描的路径 -->
+	<filepath>C:\export\SH600000.TXT</filepath>
+    <!-- 自动扫描的导入的时间 -->
+    <datetime>10:21:44</datetime>
+    <!--延迟启动时间  ms -->
+    <delay>5000</delay>
+    <!-- 周期执行时间小时，定时一天执行的话，就是24小时-->
+    <period>24</period>
+     <!-- 第一次运行-->
+    <isfirstrun>false</isfirstrun>
+</app>

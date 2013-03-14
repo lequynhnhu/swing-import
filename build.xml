@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project default="create_jar" name="数据导入构建">
+    <property name="src.dir"     value="src"/>
+    <property name="build.dir"   value="target"/>
+    <property name="classes.dir" value="${build.dir}/classes"/>
+    <property name="jar.dir"     value="${build.dir}/jar"/>
+	<property name="lib.dir"	 value="${basedir}/build/lib"></property>
+	<property name="images.dir"  value="images"></property>
+	<property name="config.dir"  value="config"></property>
+	<property name="jar_name" value="app"></property>
+	<property name="start_class" value="com.app.main.Startup"></property>
+	<path id="application" location="${jar.dir}/${jar_name}.jar"/>
+	<path id="lib_path">
+	    		<fileset dir="${lib.dir}" includes="**/*.jar"></fileset>
+	</path>
+	
+    <target name="clean" description="清除构建">
+        <delete dir="${build.dir}"/>
+    </target>
+
+    <target name="compile" description="编译系统">
+        <mkdir dir="${classes.dir}"/>
+    	
+        <javac srcdir="src" destdir="${classes.dir}" encoding="GBK" classpathref="lib_path"/>
+    	<!-- 拷贝hibernate配置文件-->
+    	<!-- 
+    	<copy todir="${classes.dir}" file="${src.dir}/hibernate.cfg.xml"/>
+    	-->
+    </target>
+	
+	<target name="resource" description="初始化资源文件">
+		<mkdir dir="${build.dir}"/>
+		<mkdir dir="${build.dir}\jar"/>
+		<copydir dest="${build.dir}\lib" src="${lib.dir}"></copydir>
+		<copydir dest="${build.dir}\images" src="${images.dir}"></copydir>
+		<copydir dest="${build.dir}\config" src="${config.dir}"></copydir>
+		<copy todir="${build.dir}" file="${basedir}\build\bin\start.bat"/>
+	</target>
+	
+    <target name="create_jar" depends="clean,resource,compile" description="打包jar包">
+    	<jar destfile="${jar.dir}/${jar_name}.jar" basedir="${classes.dir}">
+    	     <manifest>
+    	                <attribute name="Main-Class" value="${start_class}"/>
+    	    </manifest>
+    	 </jar>
+    </target>
+	
+    <target name="run" depends="create_jar" description="运行">
+    	<java fork="true" classname="${start_class}" >
+    	     <classpath>
+    	                <path refid="lib_path"/>
+    	                <path refid="application"/>
+    	     </classpath>
+    	</java>
+    </target>
+	
+</project>
